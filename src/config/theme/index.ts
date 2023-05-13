@@ -2,6 +2,7 @@ import { extendTheme } from "@chakra-ui/react";
 
 // Global style overrides
 import styles from "./styles";
+import { containerTheme } from "./components";
 
 const breakpoints = {
   sm: "375px",
@@ -25,6 +26,9 @@ const theme = extendTheme({
   },
   breakpoints,
   styles,
+  components: {
+    Container: containerTheme,
+  },
 });
 
 export default theme;

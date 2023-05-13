@@ -1,6 +1,8 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Inter } from "next/font/google";
 import Head from "next/head";
+import Navbar from "./navbar";
+import Footer from "./footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -14,7 +16,7 @@ const Layout = ({
   children: React.ReactNode;
 }) => {
   return (
-    <html className={inter.className}>
+    <section className={inter.className}>
       <Head>
         <title>{title || "Login"}</title>
         <meta name="description" content="Haastrup Mall Limited" />
@@ -22,8 +24,10 @@ const Layout = ({
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
 
+      <Navbar />
       <main>{children}</main>
-    </html>
+      <Footer />
+    </section>
   );
 };
 

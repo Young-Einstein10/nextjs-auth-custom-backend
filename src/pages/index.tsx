@@ -1,9 +1,15 @@
-import { Button, Text } from "@chakra-ui/react";
+import { Button, Heading } from "@chakra-ui/react";
+import { useSession } from "next-auth/react";
 
 export default function Home() {
+  const { data } = useSession();
+
   return (
     <div>
-      <Text>Hello There</Text>
+      <Heading>Landing Page</Heading>
+
+      {data ? <pre>{JSON.stringify(data, null, 2)}</pre> : null}
+
       <Button>Save</Button>
     </div>
   );
